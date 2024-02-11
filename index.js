@@ -1,4 +1,3 @@
-const Youtube = require('youtube-stream-url');
 const express = require('express');
 const axios = require('axios');
 const getCanvases = require('./src/_canvasApi.js');
@@ -7,15 +6,8 @@ const app = express();
 const port = 3000
 
 app.listen(port, function () {
-    console.log("mendengarkan di port ", port)
-    if (port == 3000) { console.log('running di local http://localhost:3000') }
-});
-
-app.get('/yt', async function (req, res) {
-    let id = req.query.id
-
-    res.json({ success: true, data: await Youtube.getInfo({ url: `https://www.youtube.com/watch?v=${id}`, throwOnError: true }) });
-
+    console.log("listening on port ", port)
+    if (port == 3000) { console.log('running on loca http://localhost:3000') }
 });
 
 app.get('/spotify', async function (req, res) {
