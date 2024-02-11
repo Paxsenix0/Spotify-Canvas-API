@@ -1,31 +1,20 @@
 {
-    "name": "youtube-stream-url",
-    "version": "2.4.3",
-    "description": "Get stream url from youtube link",
-    "source": "src/index.js",
-    "main": "dist/index.js",
-    "scripts": {
-        "build": "parcel build"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/dangdungcntt/youtube-stream-url.git"
-    },
+    "name": "Spotify-Canvas-API",
+    "version": "1.0.0",
+    "description": "Get Canvas url",
     "keywords": [
-        "youtube",
-        "stream",
-        "url"
+        "spotify",
+        "canvas",
+        "api"
     ],
-    "author": "DangDung <dangdungcntt@gmail.com> (dangdungcntt.wordpress.com)",
+    "author": "Paxsenix0",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/dangdungcntt/youtube-stream-url/issues"
+        "url": "https://github.com/Paxsenix0/Spotify-Canvas-API/issues"
     },
-    "homepage": "https://github.com/dangdungcntt/youtube-stream-url#readme",
+    "homepage": "https://github.com/Paxsenix0/Spotify-Canvas-API#readme",
     "dependencies": {
         "axios": "^1.6.0",
-        "m3u8-file-parser": "^0.2.4",
-        "youtube-stream-url": "^2.4.3",
         "express": "latest",
         "google-protobuf": "^3.11.4"
     },
