@@ -8,4 +8,4 @@ RUN yarn cache clean
 COPY . .
 ENV PORT 80
 EXPOSE 80
-CMD ["node", "test.js"]
+CMD ["node", "index.js"]
