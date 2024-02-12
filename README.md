@@ -1,12 +1,15 @@
 # Spotify-Canvas-API
 Easily get canvas video url from trackid!
 
-### Examples
+> [!WARNING]
+> This project is probably against Spotify TOS. Use at your own risks.
+
+### Examples GET
 
 ```
-https://spotify-canvas-api.vercel.app/spotify?id=spotify:track:3OHfY25tqY28d16oZczHc8
+https://localhost:3000/spotify?id=spotify:track:3OHfY25tqY28d16oZczHc8
 ```
-__Response:__
+### Response:
 
 ```json
 {
@@ -28,6 +31,10 @@ __Response:__
   }
 }
 ```
+### Deployment
+__Vercel__
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FPaxsenix0%2FSpotify-Canvas-API%2Ftree%2Fmain&project-name=Spotify-Canvas-API&repository-name=Spotify-Canvas-API&redirect-url=https%3A%2F%2Fgithub.com%2FPaxsenix0%2FSpotify-Canvas-API)
 
 
 ### Information
