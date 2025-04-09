@@ -2,12 +2,13 @@ import axios from 'axios';
 import { getToken } from './spotifyAuthService.js';
 
 export async function getCanvases(trackUri) {
-  const canvas = await import('../proto/_canvas_pb.cjs');
+  const { CanvasRequest, CanvasResponse } = (await import('../proto/_canvas_pb.cjs')).default;
+  
   try {
     const accessToken = await getToken();
 
-    const canvasRequest = new canvas.CanvasRequest();
-    const track = new canvas.CanvasRequest.Track();
+    const canvasRequest = new CanvasRequest();
+    const track = new CanvasRequest.Track();
     track.setTrackUri(trackUri);
     canvasRequest.addTracks(track);
 
@@ -34,9 +35,8 @@ export async function getCanvases(trackUri) {
       return null;
     }
 
-    const parsed = canvas.CanvasResponse.deserializeBinary(response.data).toObject();
+    const parsed = CanvasResponse.deserializeBinary(response.data).toObject();
     return parsed;
-
   } catch (error) {
     console.error(`Canvas request error:`, error);
     return null;
