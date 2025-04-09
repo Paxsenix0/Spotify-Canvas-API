@@ -51,12 +51,16 @@ https://localhost:3000/api/canvas?trackId=3OHfY25tqY28d16oZczHc8
 
 ### 1. Clone the Repo
 
+```bash
 git clone https://github.com/Paxsenix0/Spotify-Canvas-API.git
 cd Spotify-Canvas-API
+```
 
 ### 2. Install Dependencies
 
+```bash
 npm install
+```
 
 ### 3. Set Required Environment Variable
 
@@ -64,7 +68,9 @@ You must supply your sp_dc cookie from a logged-in Spotify session.
 
 Create a .env file in the root:
 
+```bash
 SP_DC=your_sp_dc_cookie_here
+```
 
 > This cookie is used to generate an access token to authenticate requests.
 
