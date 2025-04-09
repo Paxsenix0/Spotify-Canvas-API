@@ -1,7 +1,8 @@
 {
     "name": "Spotify-Canvas-API",
-    "version": "1.0.0",
-    "description": "Get Canvas url",
+    "version": "2.0.0",
+    "description": "Unofficial API to fetch Spotify **Canvas video data** (the looping visual videos that appear behind songs on mobile).",
+    "type": "module",
     "main": "index.js",
     "keywords": [
         "spotify",
@@ -13,6 +14,8 @@
     "dependencies": {
         "axios": "^1.6.0",
         "express": "latest",
-        "google-protobuf": "^3.11.4"
+        "google-protobuf": "^3.11.4",
+        "otpauth": "latest",
+        "dotenv": "latest"
     }
 }
