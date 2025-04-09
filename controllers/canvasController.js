@@ -1,4 +1,4 @@
-import { getCanvases } from '../services/canvasService.js';
+import { getCanvases } from '../services/spotifyCanvasService.js';
 
 export const fetchCanvas = async (req, res) => {
   const { trackId } = req.query;
