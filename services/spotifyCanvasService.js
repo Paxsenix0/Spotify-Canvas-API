@@ -23,7 +23,7 @@ export async function getCanvases(trackUri) {
           'Accept': 'application/protobuf',
           'Content-Type': 'application/x-www-form-urlencoded',
           'Accept-Language': 'en',
-          'User-Agent': 'Spotify/9.0.32 iOS/18.4 (iPhone15,3)',
+          'User-Agent': 'Spotify/9.0.34.593 iOS/18.4 (iPhone15,3)',
           'Accept-Encoding': 'gzip, deflate, br',
           'Authorization': `Bearer ${accessToken}`,
         },
