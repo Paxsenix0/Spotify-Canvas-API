@@ -13,7 +13,7 @@ const totp = new OTPAuth.TOTP({
 export async function getToken(reason = "init", productType = "web-player") {
   const payload = await generateAuthPayload(reason, productType);
 
-  const url = new URL("https://open.spotify.com/get_access_token");
+  const url = new URL("https://open.spotify.com/api/token");
   Object.entries(payload).forEach(([key, value]) => url.searchParams.append(key, value));
 
   const response = await axios.get(url.toString(), {
