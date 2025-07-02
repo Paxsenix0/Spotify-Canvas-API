@@ -3,14 +3,20 @@ import * as OTPAuth from "otpauth";
 
 const SP_DC = process.env.SP_DC;
 
+const totpSecret = (function (data) {
+    const mappedData = data.map((value, index) => value ^ ((index % 33) + 9));
+    const hexData = Buffer.from(mappedData.join(""), "utf8").toString("hex");
+    return OTPAuth.Secret.fromHex(hexData);
+})([37, 84, 32, 76, 87, 90, 87, 47, 13, 75, 48, 54, 44, 28, 19, 21, 22]);
+
 const totp = new OTPAuth.TOTP({
   period: 30,
   digits: 6,
   algorithm: "SHA1",
-  secret: OTPAuth.Secret.fromHex("35353037313435383533343837343939353932323438363330333239333437"),
+  secret: totpSecret
 });
 
-export async function getToken(reason = "init", productType = "web-player") {
+export async function getToken(reason = "init", productType = "mobile-web-player") {
   const payload = await generateAuthPayload(reason, productType);
 
   const url = new URL("https://open.spotify.com/api/token");
@@ -36,18 +42,14 @@ async function generateAuthPayload(reason, productType) {
     reason,
     productType,
     totp: generateTOTP(localTime),
-    totpVer: "5",
-    totpServer: generateTOTP(Math.floor(serverTime / 30)),
-    sTime: String(serverTime),
-    cTime: String(localTime),
-    buildVer: "web-player_2025-03-20_1742497479926_93656b9",
-    buildDate: "2025-03-20"
+    totpVer: "8",
+    totpServer: generateTOTP(Math.floor(serverTime / 30))
   };
 }
 
 async function getServerTime() {
   try {
-    const { data } = await axios.get("https://open.spotify.com/server-time", {
+    const { data } = await axios.get("https://open.spotify.com/api/server-time", {
       headers: {
         'User-Agent': userAgent(),
         'Origin': 'https://open.spotify.com/',
